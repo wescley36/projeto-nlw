@@ -1,0 +1,170 @@
+*{
+    margin: 0;/* removendo margin parão do navegador */
+    padding: 0;/* removendo padding padrão do navegador */
+    box-sizing: border-box; /* considera o tamanho da caixa como absoluta, ou seja, padding e margin não aumentam o tamanho da caixa */
+}
+
+body{
+    background: url("../img/wallpaper.png");/* usando imagem como background */
+    background-position: top center; /* colocando ela centralizada e no topo */
+    background-size: 100% auto; /* redimencionando o tamanho dela para sempre inteira  e se ajustando conforme diminua o dispositivo */
+    background-repeat: no-repeat; /* tirando a repetição para ficar somente no topo */
+    background-color: #121214; /* completando o restante do background com a cor da imagem */
+}
+
+/* CABEÇALHO */
+header{
+    padding-top: 32px;
+    height: calc(120px + 32px);
+}
+header div{
+    width: 120px; /* largura do cabeçalho inteiro */
+    margin: auto; /* automatico para as laterais */
+    background-image: linear-gradient(to right, #9572FC, #43E7AD, #E2D45C); /* background do header */
+    border-radius: 50%; /* deixando o header redondo */
+    display: flex; /* centralizar o elemento dentro da div */
+    padding: 4px; /* espaço entre a diiv e a imagem ded 4px */
+    background-size: 400%; /*aumentando em 4x o tamanho do header para fazer a animação de glower  */
+    /* animation: glower 1s linear infinite; */ /* animação em glower */
+    transition: transform .3s; /* animação de aumentar o tamanho */
+    animation: fromTop .7s .4s backwards, glower 2s linear infinite;
+    /* animation: glower 2s linear infinite; */ /* animação em glower */
+}
+header img{
+    height: 110px; /* Altura da iamagem */
+    width: 100%; /* Largura da imagem de acordo cocm a div onde se encontra*/
+    border-radius: 50%; /* deixando a imagem redonda */
+}
+header div:hover{
+    transform: scale(1.1); /* escala de aumento 0.1 */
+}
+
+/* CONTEUDO */
+main{
+    max-width: 580px; /* setando a largura maxima que o conteudo pode ter */
+    width: 90%; /* Fazendo o conteudo ocupar 90% da largura do dispositivo */
+    margin: 32px auto;/* Centralizando o conteudo e colocando um espaço de 32px em cima e em baixo*/
+
+    display: grid;/* deixa os elementos como block, mas permite utilizar gap */
+    gap: 24px; /* coloca um espaço entre as caixas */
+}
+
+/* CARDS... que esta atras da div cards*/
+section{
+    color: white; /* cor das letras */
+    font-family: 'Inter', sans-serif; /* font das letras */
+    padding: 4px 0 0 0; /* colocando um padding para o topo de 4px, a parte que esta como colorida*/
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD, #E2D45C 100%); /* background  colorido*/
+    border-radius: 10px 10px; /* arredondamento das bordas em 8px */
+    background-size: 400%; /*aumentando em 4x o tamanho do header para fazer a animação de glower  */
+    animation: fromRight linear .7s backwards, glower 3s linear infinite; /* animação em glower */
+}
+main section:nth-child(1){ /* setando o tempo de delay para começar a animação para cada filho */
+    animation-delay: 0s;
+}
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+main section:nth-child(3){
+    animation-delay: .8s;
+}
+section div{
+    border-radius: 8px 8px; /* arredondamento das bordas em 8px */
+    padding: 32px; /* espaçamento das bordas 32px */
+    padding-top: 24px; /* espaçamento do conteudo até o topo em 24px */
+    background-color: #2A2634; /* background do card */
+    text-indent: 5px; /* identação das palavras*/
+    line-height: 1.5; /* autura da linha */
+}
+section h2{
+    letter-spacing: -0.47px;/* espaço entre as letras */
+}
+section p{
+    letter-spacing: -0.18px;/* espaço entre as letras */
+    color: #A1A1AA; /* cor da letras */
+}
+section ul{
+    display: flex; /*coloca os conteudos na mesma linha  */
+    flex-wrap: wrap;/* Quando chega no limite da caixa quebra a linha, levando o conteúdo para baixo  */
+    list-style-type: none; /* tira o ponto da lista */
+    gap: 16px; /* espaço entre os conteudos */
+    margin-top: 24px;
+}
+
+
+/* CARDS ESPECIFICOS... que esta acima da section*/
+.games-list img{
+    width: 90px;
+    margin-right: 5px;
+    border-radius: 8px;
+}
+.games-list img:hover {
+    transform: scale(1.5);
+    transition: 0.5s;
+}
+.channel-list img{
+    width: 70px;
+    border-radius: 50%;
+    border: 1px solid #443E54;
+}
+.channel-list img:hover{
+    animation: rotation linear 2s infinite;
+}
+.social-list svg:hover{
+    animation: shake linear 0.3s infinite;
+}
+
+/* ANIMAÇÕES */
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }25%{
+        transform: rotate(90deg);
+    }50%{
+        transform: rotate(180deg);
+    }75%{
+        transform: rotate(270deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes shake{
+    0%{
+        transform: rotate(0deg);
+    }25%{
+        transform: rotate(10deg);
+    }50%{
+        transform: rotate(0deg);
+    }75%{
+        transform: rotate(-10deg);
+    }100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes glower{
+    0%{
+        background-position: 0 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0 50%;
+    }
+}
+@keyframes fromTop{
+    from{   
+        opacity: 0;
+        transform: translateY(-30px);
+    }to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fromRight{
+    from{   
+        opacity: 0;
+        transform: translateX(-30px);
+    }to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
