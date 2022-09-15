@@ -25,9 +25,9 @@ header div{
     display: flex; /* centralizar o elemento dentro da div */
     padding: 4px; /* espaço entre a diiv e a imagem ded 4px */
     background-size: 400%; /*aumentando em 4x o tamanho do header para fazer a animação de glower  */
-    animation: glower 1s linear infinite; /* animação em glower */
+    /* animation: glower 1s linear infinite; */ /* animação em glower */
     transition: transform .3s;
-    animation: fromTop .7s .4s backwards;
+    animation: fromTop .7s .4s backwards, glower 2s linear infinite;
     /* animation: glower 2s linear infinite; */ /* animação em glower */
 }
 header img{
@@ -48,18 +48,7 @@ main{
     display: grid;/* deixa os elementos como block, mas permite utilizar gap */
     gap: 24px; /* coloca um espaço entre as caixas */
 }
-main section{
-    animation: fromRight .7 backwards;
-}
-main section:nth-child(1){
-    animation-delay: 0;
-}
-main section:nth-child(2){
-    animation-delay: .4;
-}
-main section:nth-child(3){
-    animation-delay: .8;
-}
+
 /* CARDS... que esta atras da div cards*/
 section{
     color: white; /* cor das letras */
@@ -67,8 +56,17 @@ section{
     padding: 4px 0 0 0; /* colocando um padding para o topo de 4px, a parte que esta como colorida*/
     background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD, #E2D45C 100%); /* background  colorido*/
     border-radius: 10px 10px; /* arredondamento das bordas em 8px */
-    /* background-size: 400%; */ /*aumentando em 4x o tamanho do header para fazer a animação de glower  */
-    /* animation: glower 3s linear infinite; */ /* animação em glower */
+    background-size: 400%; /*aumentando em 4x o tamanho do header para fazer a animação de glower  */
+    animation: fromRight linear .7s backwards, glower 3s linear infinite; /* animação em glower */
+}
+main section:nth-child(1){
+    animation-delay: 0s;
+}
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+main section:nth-child(3){
+    animation-delay: .8s;
 }
 section div{
     border-radius: 8px 8px; /* arredondamento das bordas em 8px */
@@ -92,6 +90,7 @@ section ul{
     gap: 16px; /* espaço entre os conteudos */
     margin-top: 24px;
 }
+
 
 /* CARDS ESPECIFICOS... que esta acima da section*/
 .games-list img{
