@@ -26,7 +26,7 @@ header div{
     padding: 4px; /* espaço entre a diiv e a imagem ded 4px */
     background-size: 400%; /*aumentando em 4x o tamanho do header para fazer a animação de glower  */
     /* animation: glower 1s linear infinite; */ /* animação em glower */
-    transition: transform .3s;
+    transition: transform .3s; /* animação de aumentar o tamanho */
     animation: fromTop .7s .4s backwards, glower 2s linear infinite;
     /* animation: glower 2s linear infinite; */ /* animação em glower */
 }
