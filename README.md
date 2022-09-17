@@ -1,13 +1,17 @@
-<p>Trilha Explorer</p>
+# NLW eSports 
 
-<p>Projeto construído do evento Next Level Week da Rockeseat.</p>
+![preview](./assets/.github/preview.png)
 
-<a href="https://wescley36.github.io/projeto-nlw/"> Clique aqui para acessar </a>
+>Trilha Explorer
 
-<p>Tecnologias</p>
-<p>Html</p>
-<p>Css</p>
-<p>Git e Github</p>
-<p>##Contato</p>
+Projeto construído do evento Next Level Week da Rockeseat.
 
+[Clique aqui para acessar] (https://wescley36.github.io/projeto-nlw/)
+
+## Tecnologias
+-Html
+-Css
+-Git e Github
+
+##Contato
 vieirawescley36@gmail.com
